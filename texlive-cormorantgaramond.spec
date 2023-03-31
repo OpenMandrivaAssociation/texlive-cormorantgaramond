@@ -1,6 +1,6 @@
 Name:		texlive-cormorantgaramond
 Version:	64411
-Release:	1
+Release:	2
 Summary:	Cormorant Garamond family of fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/cormorantgaramond
