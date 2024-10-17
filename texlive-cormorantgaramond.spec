@@ -3,7 +3,7 @@ Version:	71057
 Release:	1
 Summary:	Cormorant Garamond family of fonts
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/cormorantgaramond
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/cormorantgaramond
 License:	ofl lppl
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cormorantgaramond.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cormorantgaramond.doc.r%{version}.tar.xz
