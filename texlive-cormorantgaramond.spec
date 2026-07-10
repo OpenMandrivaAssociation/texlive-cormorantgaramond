@@ -1,45 +1,25 @@
-Name:		texlive-cormorantgaramond
-Version:	71057
-Release:	1
+%global tl_name cormorantgaramond
+%global tl_revision 78931
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	3.601
+Release:	%{tl_revision}.1
 Summary:	Cormorant Garamond family of fonts
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/cormorantgaramond
+URL:		https://www.ctan.org/tex-archive/fonts/cormorantgaramond
 License:	ofl lppl
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cormorantgaramond.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cormorantgaramond.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/cormorantgaramond.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/cormorantgaramond.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides LaTeX, pdfLaTeX, XeLaTeX and LuaLaTeX
-support for the Cormorant Garamond family of fonts, designed by
-Christian Thalman of Catharsis Fonts. The family includes
-light, regular, medium, semi-bold, and bold weights, with
-italics.
+This package provides LaTeX, pdfLaTeX, XeLaTeX and LuaLaTeX support for
+the Cormorant Garamond family of fonts, designed by Christian Thalman of
+Catharsis Fonts. The family includes light, regular, medium, semi-bold,
+and bold weights, with italics.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/cormorantgaramond
-%{_texmfdistdir}/fonts/vf/catharsis/cormorantgaramond
-%{_texmfdistdir}/fonts/type1/catharsis/cormorantgaramond
-%{_texmfdistdir}/fonts/truetype/catharsis/cormorantgaramond
-%{_texmfdistdir}/fonts/tfm/catharsis/cormorantgaramond
-%{_texmfdistdir}/fonts/map/dvips/cormorantgaramond
-%{_texmfdistdir}/fonts/enc/dvips/cormorantgaramond
-%doc %{_texmfdistdir}/doc/fonts/cormorantgaramond
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
